@@ -1,4 +1,5 @@
 import Hero from "@/components/Widgets/Hero"
+import Product from "@/components/Widgets/Product";
 import Promotion from "@/components/Widgets/Promotion"
 
 export default async function Home() {
@@ -7,10 +8,11 @@ export default async function Home() {
   return (
     <>
       <main>
-        {/* @ts-ignore */}
         <Hero />
         {/* @ts-ignore */}
         <Promotion />
+        {/* @ts-ignore */}
+        <Product />
       </main>
     </>
   )

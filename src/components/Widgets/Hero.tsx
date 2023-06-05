@@ -2,33 +2,31 @@ import React from 'react'
 import { Button } from "@/components/shared/Button"
 import Wrapper from '../shared/Wrapper'
 import Image from 'next/image'
-import { Image as IImage } from 'sanity'
-import { urlForImage } from '../../../sanity/lib/image'
-import { client } from '@/lib/sanityClient'
 import { CgShoppingCart } from 'react-icons/cg'
 import Link from 'next/link'
+import hero from '/public/header.png'
 
-const getProductData = async () => {
+// const getProductData = async () => {
 
-  const res = await client.fetch(`*[_type=="product" && _id=="9e1bbd35-2cf7-4b68-9702-bf2c91f96947"]{
-    image,
-      _id,
-  }`); // we use GROQ query for data fetching
-  return res
-}
-interface IProduct { // sanity-typed-schema-builder this automatically builds these types but we need to work on schema
-  title: string,
-  price: number,
-  image: IImage, // the error will come on browser when you pass item.image in function urlForImage() that will resolve by adding url of image from browser in next.config.js file
-  _id: string,
-  category: {
-    name: string
-  }
-}
+//   const res = await client.fetch(`*[_type=="product" && _id=="9e1bbd35-2cf7-4b68-9702-bf2c91f96947"]{
+//     image,
+//       _id,
+//   }`); // we use GROQ query for data fetching
+//   return res
+// }
+// interface IProduct { // sanity-typed-schema-builder this automatically builds these types but we need to work on schema
+//   title: string,
+//   price: number,
+//   image: IImage, // the error will come on browser when you pass item.image in function urlForImage() that will resolve by adding url of image from browser in next.config.js file
+//   _id: string,
+//   category: {
+//     name: string
+//   }
+// }
 
 
-const Hero = async () => {
-  const data: IProduct[] = await getProductData();
+const Hero = () => {
+  // const data: IProduct[] = await getProductData();
   return (
     <section id='home'>
       <Wrapper>
@@ -60,8 +58,6 @@ const Hero = async () => {
           </div>
           {/* Right Side */}
           <div className='flex-1 lg:block hidden'>
-            {data.map((item, i) => (
-              <div key={i}>
                 {/* Cirlce */}
                 <div className='w-350 h-350 rounded-full bg-[#FFECE3]'>
                   {/* Image */}
@@ -70,13 +66,10 @@ const Hero = async () => {
                       width={700}
                       height={1500}
                       className='' //these classes are for image settlement
-                      src={urlForImage(item.image).url()} alt='Hero Image' />
-
-                  </div>
+                      src={hero} alt='Hero Image' />
                 </div>                    
               </div>
-            ))
-            }
+            
           </div>
         </div>
       </Wrapper>
