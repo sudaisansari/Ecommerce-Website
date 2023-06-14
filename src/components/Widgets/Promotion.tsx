@@ -55,7 +55,7 @@ const Promotion = async () => {
       <Wrapper>
         <div className='bg-red-400 mt-28'>
           <h3 className='text-[#7E2CFF] font-bold text-center'>PROMOTIONS</h3>
-          <h2 className='text-[32px] font-bold text-center'>Our Promotions Events</h2>
+          <h2 className='text-[32px] font-bold tracking-wide text-center'>Our Promotions Events</h2>
           <div className='flex flex-col xl:flex-row items-center mt-5 px-24'>
             {/* Left Side */}
             <div className=''>

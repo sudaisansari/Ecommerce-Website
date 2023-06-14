@@ -39,7 +39,7 @@ const Hero = () => {
             </div>
             {/* H1 heading */}
             <div className='mt-10'>
-              <h2 className="scroll-m-20 max-w-screen-sm pb-2 text-[54px] font-semibold tracking-light leading-none transition-colors  first:mt-0">
+              <h2 className="scroll-m-20 max-w-screen-sm pb-2 text-[54px] font-bold tracking-light leading-none transition-colors  first:mt-0">
                 An Industrial Take on Streetwear
               </h2>
             </div>
