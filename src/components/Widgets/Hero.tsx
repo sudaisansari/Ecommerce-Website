@@ -6,31 +6,12 @@ import { CgShoppingCart } from 'react-icons/cg'
 import Link from 'next/link'
 import hero from '/public/header.png'
 
-// const getProductData = async () => {
-
-//   const res = await client.fetch(`*[_type=="product" && _id=="9e1bbd35-2cf7-4b68-9702-bf2c91f96947"]{
-//     image,
-//       _id,
-//   }`); // we use GROQ query for data fetching
-//   return res
-// }
-// interface IProduct { // sanity-typed-schema-builder this automatically builds these types but we need to work on schema
-//   title: string,
-//   price: number,
-//   image: IImage, // the error will come on browser when you pass item.image in function urlForImage() that will resolve by adding url of image from browser in next.config.js file
-//   _id: string,
-//   category: {
-//     name: string
-//   }
-// }
-
 
 const Hero = () => {
-  // const data: IProduct[] = await getProductData();
   return (
     <section id='home'>
       <Wrapper>
-        <div className="flex flex-col md:flex-row items-center bg-slate-400">
+        <div className="flex flex-col md:flex-row items-center">
           {/* Left Side */}
           <div className='flex-1 mx-10'>
             {/* sale button */}
@@ -52,24 +33,23 @@ const Hero = () => {
             {/* shopping button */}
             <Link href='/allproducts'>
               <div className='mt-8'>
-                <Button variant={'default'} className='bg-[#212121] text-white px-12 py-8 text-xl gap-x-2'><CgShoppingCart />Shopping</Button>
+                <Button variant={'default'} className='hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121] px-12 py-8 text-xl gap-x-2 rounded-none text-center text-white'><CgShoppingCart />Shopping</Button>
               </div>
             </Link>
           </div>
           {/* Right Side */}
           <div className='flex-1 lg:block hidden'>
-                {/* Cirlce */}
-                <div className='w-350 h-350 rounded-full bg-[#FFECE3]'>
-                  {/* Image */}
-                  <div>
-                    <Image
-                      width={700}
-                      height={1500}
-                      className='' //these classes are for image settlement
-                      src={hero} alt='Hero Image' />
-                </div>                    
+            {/* Cirlce */}
+            <div className='w-350 h-350 rounded-full bg-[#FFECE3]'>
+              {/* Image */}
+              <div>
+                <Image
+                  width={700}
+                  height={1500}
+                  className='' //these classes are for image settlement
+                  src={hero} alt='Hero Image' />
               </div>
-            
+            </div>
           </div>
         </div>
       </Wrapper>

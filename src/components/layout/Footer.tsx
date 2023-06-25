@@ -69,8 +69,8 @@ const Footer = () => {
                         <div>
                             <h4 className='text-2xl font-bold'>Company</h4>
                             {
-                                Items.map((item) => (
-                                    <div className="flex mt-4 flex-col">
+                                Items.map((item,i) => (
+                                    <div key={i} className="flex mt-4 flex-col">
                                         {item.Company.map((item, index) => (
                                             <span key={index} className="my-2 font-semibold text-lg">
                                                 {item}
@@ -84,8 +84,8 @@ const Footer = () => {
                         <div>
                             <h4 className='text-2xl font-bold'>Support</h4>
                             {
-                                Items.map((item) => (
-                                    <div className="flex mt-4 flex-col">
+                                Items.map((item,i) => (
+                                    <div key={i} className="flex mt-4 flex-col">
                                         {item.Support.map((item, index) => (
                                             <span key={index} className="my-2 font-semibold text-lg">
                                                 {item}
@@ -99,8 +99,8 @@ const Footer = () => {
                         <div>
                             <h4 className='text-2xl font-bold'>Contact</h4>
                             {
-                                Items.map((item) => (
-                                    <div className="flex mt-4 flex-col">
+                                Items.map((item,i) => (
+                                    <div key={i} className="flex mt-4 flex-col">
                                         {item.Contact.map((item, index) => (
                                             <span key={index} className="my-2 font-semibold text-lg">
                                                 {item}

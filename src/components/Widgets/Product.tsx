@@ -27,7 +27,7 @@ const Product = async () => {
     return (
         <section id='product'>
             <Wrapper>
-                <div className='mt-36 bg-green-400'>
+                <div className='mt-36'>
                     {/* Heading */}
                     <div className=''>
                         <h3 className='text-[#7E2CFF] font-bold text-center'>PRODUCTS</h3>

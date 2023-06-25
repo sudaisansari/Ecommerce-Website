@@ -45,13 +45,13 @@ const Jwellery = async () => {
         <div className='mt-36'>
           {/* heading */}
           <div className='flex text-center justify-center xl:justify-end pb-5'>
-            <h2 className="max-w-lg text-[50px] right-20 font-bold tracking-normal leading-tight">
+            <h2 className="max-w-lg text-[50px] right-20 font-bold tracking-normal text-left leading-tight">
               Unique and Authentic Vintage Designer Jewellery
             </h2>
           </div>
-          <div className='flex flex-col xl:flex-row justify-center'>
+          <div className='flex flex-col xl:flex-row justify-center flex-wrap'>
             {/* Quarter Boxes */}
-            <div className='xl:w-1/2 mb-2'>
+            <div className='relative xl:w-1/2 mb-2'>
               <h2 className="absolute xl:block hidden text-8xl max-w-[250px] font-bold text-gray-200">
                 Different from others
               </h2>
@@ -78,7 +78,7 @@ const Jwellery = async () => {
               </div>
             </div>
             {/* Image and description */}
-            <div className='flex flex-col md:flex-row space-y-4 justify-center items-center bg-yellow-300'>
+            <div className='flex flex-col md:flex-row space-y-4 justify-center items-center'>
               {/* image */}
               <div>
                 {
@@ -102,7 +102,7 @@ const Jwellery = async () => {
                 {/* Button */}
                 <Link href="/allproducts">
                   <div>
-                    <button className='px-2 py-5 mt-3 rounded bg-[#212121] text-white font-semibold'>See All Products</button>
+                    <button className='px-2 py-5 mt-3 rounded-none text-center text-white font-semibold hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121]'>See All Products</button>
                   </div>
                 </Link>
               </div>

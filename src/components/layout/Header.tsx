@@ -40,11 +40,11 @@ const header = () => {
     const [navbar, setNavbar] = useState(false)
 
     return (
-        <div>
-            <header className="sticky top-0 z-10">
-                <Wrapper>
+        <header className="top-0 z-10">
+            <Wrapper>
+                <div>
                     <div className='flex justify-between mx-8 py-4 items-center'>
-                        <div className='flex items-center bg-slate-500'>
+                        <div className='flex items-center'>
                             {/* Logo */}
                             <div className='object-scale-down'>
                                 <Link href={"/"}>
@@ -80,13 +80,13 @@ const header = () => {
                         <div className='hidden md:block'>
                             <ul className='flex items-center gap-x-12 font-medium text-lg'>
                                 <li>
-                                    <Link href={"/female"}>Female</Link>
+                                    <Link href={"/category/female"}>Female</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/male"}>Male</Link>
+                                    <Link href={"/category/male"}>Male</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/kids"}>Kids</Link>
+                                    <Link href={"/category/kids"}>Kids</Link>
                                 </li>
                                 <li>
                                     <Link href={"/allproducts"}>All Products</Link>
@@ -121,16 +121,11 @@ const header = () => {
                                     </svg>
                                 </div>
                             </div>
-
                         </div>
-
-
-
                     </div>
-
-                </Wrapper>
-            </header>
-        </div>
+                </div>
+            </Wrapper>
+        </header>
     )
 }
 

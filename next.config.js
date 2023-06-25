@@ -6,3 +6,15 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+// const nextConfig = {
+//     experiments: {
+//       topLevelAwait: true,
+//     },
+//     images: {
+//       domains: ["cdn.sanity.io"], // URL of the image
+//     },
+//   };
+  
+//   module.exports = nextConfig;
+  

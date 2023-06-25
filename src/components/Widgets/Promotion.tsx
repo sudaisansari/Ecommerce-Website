@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Image as IImage } from 'sanity'
 import { client } from '@/lib/sanityClient'
 import { urlForImage } from '../../../sanity/lib/image';
-import { Button } from '../shared/Button';
+import { Button } from '@//components/shared/Button';
 import { CgDollar } from 'react-icons/cg';
 
 const getData1 = async () => {
@@ -53,7 +53,7 @@ const Promotion = async () => {
   return (
     <section id='promotions'>
       <Wrapper>
-        <div className='bg-red-400 mt-28'>
+        <div className='mt-28'>
           <h3 className='text-[#7E2CFF] font-bold text-center'>PROMOTIONS</h3>
           <h2 className='text-[32px] font-bold tracking-wide text-center'>Our Promotions Events</h2>
           <div className='flex flex-col xl:flex-row items-center mt-5 px-24'>
@@ -86,7 +86,7 @@ const Promotion = async () => {
                   <p className='text-center mt-4 font-medium text-white'>USE PROMO CODE</p>
                 </div>
                 <div>
-                  <Button variant={'default'} className='bg-[#474747] mt-2 mb-10 text-white tracking-[0.3rem]'>DINEWEEKENDSALE</Button>
+                  <Button className='hover:shadow-md hover:ring-1 ring-slate-400 bg-[#474747] mt-2 mb-10 text-white tracking-[0.3rem]'>DINEWEEKENDSALE</Button>
                 </div>
               </div>
             </div>

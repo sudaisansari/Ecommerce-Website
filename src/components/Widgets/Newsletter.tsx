@@ -27,7 +27,7 @@ const Newsletter = () => {
                         </div>
                         {/* button */}
                         <div>
-                            <Button className='rounded-none text-center text-white w-36 bg-[#212121]'>Get Started</Button>
+                            <Button className='rounded-none text-center text-white w-36 hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121]'>Get Started</Button>
                         </div>
                     </div>
                 </div>
