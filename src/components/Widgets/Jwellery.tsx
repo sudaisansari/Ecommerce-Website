@@ -51,8 +51,8 @@ const Jwellery = async () => {
           </div>
           <div className='flex flex-col xl:flex-row justify-center flex-wrap'>
             {/* Quarter Boxes */}
-            <div className='relative xl:w-1/2 mb-2'>
-              <h2 className="absolute xl:block hidden text-8xl max-w-[250px] font-bold text-gray-200">
+            <div className='relative xl:flex-1 mb-2'>
+              <h2 className="absolute xl:block hidden text-8xl max-w-[250px] font-bold text-gray-200/75 -z-10">
                 Different from others
               </h2>
               <div className='flex flex-col justify-center flex-1 mx-10 items-center'>
@@ -82,8 +82,8 @@ const Jwellery = async () => {
               {/* image */}
               <div>
                 {
-                  imageData.map((item) => (
-                    <div>
+                  imageData.map((item,i) => (
+                    <div key={i}>
                       <Image
                         width={300}
                         height={600}
@@ -100,7 +100,7 @@ const Jwellery = async () => {
                   <p className='max-w-[220px] tracking-wide font-normal text-lg'>This piece is ethically crafted in our small family-owned workshop in Peru with unmatched attention to detail and care. The Natural color is the actual natural color of the fiber, undyed and 100% traceable.</p>
                 </div>
                 {/* Button */}
-                <Link href="/allproducts">
+                <Link href="/products">
                   <div>
                     <button className='px-2 py-5 mt-3 rounded-none text-center text-white font-semibold hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121]'>See All Products</button>
                   </div>

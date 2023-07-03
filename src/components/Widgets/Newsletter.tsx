@@ -8,7 +8,7 @@ const Newsletter = () => {
         <section id='newsletter'>
             <Wrapper>
                 <div className='flex mt-36 flex-col relative justify-center items-center'>
-                    <h2 className="absolute opacity-50 xl:block hidden top-0 text-8xl font-bold text-gray-200">
+                    <h2 className="absolute opacity-50 xl:block hidden top-0 text-8xl font-bold text-gray-200 -z-10">
                         Newsletter
                     </h2>
                     {/* Heading */}

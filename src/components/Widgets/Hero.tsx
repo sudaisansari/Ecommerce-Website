@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
             {/* H1 heading */}
             <div className='mt-10'>
-              <h2 className="scroll-m-20 max-w-screen-sm pb-2 text-[54px] font-bold tracking-light leading-none transition-colors  first:mt-0">
+              <h2 className="scroll-m-20 max-w-screen-sm pb-2 text-[54px] font-bold tracking-light leading-none transition-colors  first:mt-0 max-md:text-5xl">
                 An Industrial Take on Streetwear
               </h2>
             </div>
@@ -31,7 +31,7 @@ const Hero = () => {
               </p>
             </div>
             {/* shopping button */}
-            <Link href='/allproducts'>
+            <Link href='/products'>
               <div className='mt-8'>
                 <Button variant={'default'} className='hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121] px-12 py-8 text-xl gap-x-2 rounded-none text-center text-white'><CgShoppingCart />Shopping</Button>
               </div>

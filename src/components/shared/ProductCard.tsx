@@ -17,7 +17,7 @@ const ProductCard = (
       };
     }) => {
       return(
-    <Link href={`/allproducts/${props._id}`}>
+    <Link href={`/products/${props._id}`}>
       <div className='mt-4'>
         <div className=''>
           <Image
