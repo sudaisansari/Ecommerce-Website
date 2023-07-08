@@ -1,55 +1,30 @@
 import React from 'react'
 import Wrapper from '../shared/Wrapper';
 import Image from 'next/image';
-import { Image as IImage } from 'sanity'
-import { client } from '@/lib/sanityClient'
 import { urlForImage } from '../../../sanity/lib/image';
-import { Button } from '@//components/shared/Button';
-import { CgDollar } from 'react-icons/cg';
+import { Button } from '@/components/shared/Button';
+import { AllProducts } from '@/utils/mock';
 
-const getData1 = async () => {
-  const res = await client.fetch(`*[_type=="product" && _id=="39dc22b8-f400-4a57-bb5b-af65ebbab4ed"]{
-    image,
-    price,
-    title,
-    description
-  }`);
-  return res
+const getData3 = async () => {
+  const data = await AllProducts();
+  return data.filter((product) => product._id === "1df3f0f3-27f3-4a5e-93c7-c9114b1c303a")
 }
 
 const getData2 = async () => {
-  const res = await client.fetch(`*[_type=="product" && _id=="8d4a5634-b4f3-4b15-84db-ea5c172b6b85"]{
-    image,
-    price,
-    title,
-    description
-  }`);
-  return res
+  const data = await AllProducts();
+  return data.filter((product) => product._id === "8d4a5634-b4f3-4b15-84db-ea5c172b6b85")
 }
 
-const getData3 = async () => {
-  const res = await client.fetch(`*[_type=="product" && _id=="1df3f0f3-27f3-4a5e-93c7-c9114b1c303a"]{
-    image,
-    price,
-    title,
-    description
-  }`);
-  return res
-}
-
-interface IProduct {
-  title: string,
-  price: string,
-  image: IImage,
-  description: string,
+const getData1 = async () => {
+  const data = await AllProducts();
+  return data.filter((product) => product._id === "39dc22b8-f400-4a57-bb5b-af65ebbab4ed")
 }
 
 const Promotion = async () => {
-
-  const data1: IProduct[] = await getData1();
-  const data2: IProduct[] = await getData2();
-  const data3: IProduct[] = await getData3();
-
+  const data1 = await getData1();
+  const data2 = await getData2();
+  const data3 = await getData3();
+  
   return (
     <section id='promotions'>
       <Wrapper>
@@ -62,8 +37,8 @@ const Promotion = async () => {
               {/* Upper Side */}
               <div className=' bg-[#D6D6D8]'>
                 {
-                  data1.map((item) => (
-                    <div className='flex flex-col md:flex-row mx-5'>
+                  data1.map((item,i) => (
+                    <div key={i} className='flex flex-col md:flex-row mx-5'>
                       <div>
                         <h2 className='text-3xl mt-4 font-bold lg:max-w-[150px]'>{item.title}</h2>
                         <p className='text-xl mt-2 font-medium lg:max-w-[100px]'>{item.description}</p>
@@ -94,8 +69,8 @@ const Promotion = async () => {
             <div className='flex flex-col gap-y-2 md:flex-row mb-4'>
               {/* Left Image */}
               <div className='mx-5 bg-[#EFE1C7]'>
-                {data2.map((item) => (
-                  <div>
+                {data2.map((item,i) => (
+                  <div key={i}>
                     {/* Heading */}
                     <div className='mt-6 mx-5'>
                       <h4 className='font-medium text-xl text-black'>{item.title}</h4>
@@ -117,8 +92,8 @@ const Promotion = async () => {
               </div>
               {/* Right Image */}
               <div className='bg-[#D7D7D9] '>
-                {data3.map((item) => (
-                  <div>
+                {data3.map((item,i) => (
+                  <div key={i}>
                     <div className='mt-6 mx-5'>
                       <h4 className='font-medium text-xl text-black'>{item.title}</h4>
                       <div className='flex mt-1 mb-16'>

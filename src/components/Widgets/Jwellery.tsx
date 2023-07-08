@@ -1,21 +1,13 @@
-import { client } from '@/lib/sanityClient';
 import React from 'react'
-import { Image as IImage } from 'sanity';
 import Image from 'next/image';
 import { urlForImage } from '../../../sanity/lib/image'
 import Link from 'next/link';
 import Wrapper from '../shared/Wrapper';
+import { AllProducts } from '@/utils/mock';
 
-const getImage = async () => {
-  const res = await client.fetch(` *[_type=="product" && title=="Imperial Alpaca Hoodie"]{
-    image,title
- }`);
-  return res
-}
-
-interface Iimage {
-  image: IImage,
-  title: string
+const getData = async () => {
+  const data = await AllProducts();
+  return data.filter((product) => product.title === "Imperial Alpaca Hoodie");
 }
 
 const quarterBoxesData = [
@@ -38,7 +30,7 @@ const quarterBoxesData = [
 ];
 
 const Jwellery = async () => {
-  const imageData: Iimage[] = await getImage();
+  const result = await getData();
   return (
     <section id='jwellery'>
       <Wrapper>
@@ -82,7 +74,7 @@ const Jwellery = async () => {
               {/* image */}
               <div>
                 {
-                  imageData.map((item,i) => (
+                  result.map((item, i) => (
                     <div key={i}>
                       <Image
                         width={300}

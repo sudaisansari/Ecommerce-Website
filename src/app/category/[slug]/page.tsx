@@ -4,8 +4,8 @@ import React from 'react'
 import Wrapper from '@/components/shared/Wrapper'
 
 const getProductsByCategory = async (category: string) => {
-  const data = await AllProducts()
-  return data.filter((product) => product.category.name === category)
+  const data = await AllProducts();
+  return data.filter((products) => products.category.name === category && products._id !== "39dc22b8-f400-4a57-bb5b-af65ebbab4ed" && products._id !== "8d4a5634-b4f3-4b15-84db-ea5c172b6b85") 
 }
 
 const page = async ({ params }: { params: { slug: string } }) => {

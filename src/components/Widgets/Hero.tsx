@@ -20,9 +20,9 @@ const Hero = () => {
             </div>
             {/* H1 heading */}
             <div className='mt-10'>
-              <h2 className="scroll-m-20 max-w-screen-sm pb-2 text-[54px] font-bold tracking-light leading-none transition-colors  first:mt-0 max-md:text-5xl">
+              <h1 className="scroll-m-20 max-w-screen-sm pb-2 text-[54px] font-bold tracking-light leading-none transition-colors  first:mt-0 max-md:text-5xl">
                 An Industrial Take on Streetwear
-              </h2>
+              </h1>
             </div>
             {/* paragraph */}
             <div className='mt-8 max-w-[500px] md:max-w-[400px]'>
