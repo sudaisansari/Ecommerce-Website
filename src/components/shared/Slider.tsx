@@ -7,6 +7,7 @@ import { TProduct } from '@/utils/types';
 import { urlForImage } from '../../../sanity/lib/image';
 import Image from 'next/image';
 import Wrapper from './Wrapper';
+import Link from 'next/link';
 
 const Slider = () => {
     const [data, setData] = useState<TProduct[]>([]);
@@ -47,14 +48,16 @@ const Slider = () => {
                     {data.map((product) => (
                         <SwiperSlide key={product._id}>
                             <button>
-                                <div className="mt-8 mb-8 text-left image-container hover:scale-110 transition-transform duration-300">
-                                    <Image
-                                        width={380}
-                                        height={600}
-                                        src={urlForImage(product.image).url()}
-                                        alt={product.title} />
-                                    <p className='text-textPrimary text-xl font-bold mt-2'>{product.title}</p>
-                                    <p className='text-textPrimary text-xl font-bold'>${product.price}</p>
+                                <div className="mt-8 mb-8 px-5 text-left image-container hover:scale-110 transition-transform duration-300">
+                                <Link href={`/products/${product._id}`}>
+                                        <Image
+                                            width={380}
+                                            height={600}
+                                            src={urlForImage(product.image).url()}
+                                            alt={product.title} />
+                                        <p className='text-textPrimary text-xl font-bold mt-2'>{product.title}</p>
+                                        <p className='text-textPrimary text-xl font-bold'>${product.price}</p>
+                                    </Link>
                                 </div>
                             </button>
                         </SwiperSlide>

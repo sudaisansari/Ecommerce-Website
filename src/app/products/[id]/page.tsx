@@ -60,7 +60,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                             </div>
                             {/* Add to Cart */}
                             <div className="flex items-center mt-5 gap-x-4">
-                                {/* <AddToCart /> */}
+                                <AddToCart />
                                 <h2 className="text-2xl font-bold">
                                     ${product.price}
                                 </h2>

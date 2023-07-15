@@ -94,7 +94,7 @@ const Jwellery = async () => {
                 {/* Button */}
                 <Link href="/products">
                   <div>
-                    <button className='px-2 py-5 mt-3 rounded-none text-center text-white font-semibold hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121]'>See All Products</button>
+                    <button className='px-2 py-3 mt-2 rounded-none text-center text-white font-semibold hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121]'>See All Products</button>
                   </div>
                 </Link>
               </div>

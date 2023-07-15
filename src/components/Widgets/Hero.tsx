@@ -9,9 +9,8 @@ import hero from '/public/header.png'
 
 const Hero = () => {
   return (
-    <section id='home'>
       <Wrapper>
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center mt-10">
           {/* Left Side */}
           <div className='flex-1 mx-10'>
             {/* sale button */}
@@ -53,7 +52,6 @@ const Hero = () => {
           </div>
         </div>
       </Wrapper>
-    </section>
   )
 }
 

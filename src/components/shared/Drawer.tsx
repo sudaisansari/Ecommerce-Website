@@ -1,7 +1,9 @@
-import { Dispatch, Fragment, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, Fragment, SetStateAction } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Navbar from './NavbarLinks';
+import Shoppingcart from './Shoppingcart';
+import Logo from '/public/logo.png';
 
 export default function CartDrawer({
     open,
@@ -41,8 +43,7 @@ export default function CartDrawer({
                                         <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                                             <div className="flex items-start justify-between">
                                                 <Dialog.Title className="text-lg font-medium text-gray-900">
-                                                    Shopping cart
-
+                                                    s
                                                 </Dialog.Title>
                                                 <div className="ml-3 flex h-7 items-center">
                                                     <button
@@ -54,7 +55,16 @@ export default function CartDrawer({
                                                     </button>
                                                 </div>
                                             </div>
-                                            <Navbar />
+                                            <div>
+                                                {/* Navbar Links */}
+                                                <div className='items-center mt-8 gap-y-20'>
+                                                    <Navbar />
+                                                </div>
+                                                {/* Shopping Cart */}
+                                                <div className='mt-4'>
+                                                    <Shoppingcart />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </Dialog.Panel>
