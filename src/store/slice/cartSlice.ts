@@ -9,7 +9,7 @@ export interface CartState {
 
 const initialState: CartState = {
   items: [],
-  totalQuantity: 0,
+  totalQuantity: 0, 
   totalAmount: 0,
 };
 
@@ -66,7 +66,7 @@ const cartSlice = createSlice({
     },
   },
 });
-
+console.log(cartSlice);
 // Action creators are generated for each case reducer function
 export const cartActions = cartSlice.actions;
 

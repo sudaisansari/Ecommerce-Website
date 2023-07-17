@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '/public/logo.png'
 import Image from 'next/image'
 import Wrapper from '../shared/Wrapper'
 import { CgFacebook } from "react-icons/cg"
@@ -38,12 +37,7 @@ const Footer = () => {
                         <div className='md:w-1/4'>
                             {/* logo */}
                             <div>
-                                <Image
-                                    src={Logo}
-                                    alt="Dine Market"
-                                    width={200}
-                                    height={200}>
-                                </Image>
+                                <Image src='/logo.png' alt='Dine Market' width={140} height={140} />
                             </div>
                             {/* paragraph */}
                             <p className='mt-8 mb-8 text-lg'>
@@ -69,7 +63,7 @@ const Footer = () => {
                         <div>
                             <h4 className='text-2xl font-bold'>Company</h4>
                             {
-                                Items.map((item,i) => (
+                                Items.map((item, i) => (
                                     <div key={i} className="flex mt-4 flex-col">
                                         {item.Company.map((item, index) => (
                                             <span key={index} className="my-2 font-semibold text-lg">
@@ -84,7 +78,7 @@ const Footer = () => {
                         <div>
                             <h4 className='text-2xl font-bold'>Support</h4>
                             {
-                                Items.map((item,i) => (
+                                Items.map((item, i) => (
                                     <div key={i} className="flex mt-4 flex-col">
                                         {item.Support.map((item, index) => (
                                             <span key={index} className="my-2 font-semibold text-lg">
@@ -99,7 +93,7 @@ const Footer = () => {
                         <div>
                             <h4 className='text-2xl font-bold'>Contact</h4>
                             {
-                                Items.map((item,i) => (
+                                Items.map((item, i) => (
                                     <div key={i} className="flex mt-4 flex-col">
                                         {item.Contact.map((item, index) => (
                                             <span key={index} className="my-2 font-semibold text-lg">

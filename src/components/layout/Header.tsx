@@ -18,7 +18,6 @@ const Header = () => {
       <Wrapper>
         <div className="flex justify-between mx-8 py-4 items-center">
           <Drawer open={drawer} setOpen={setDrawer} />
-
           {/* Logo */}
           <div className="object-scale-down md:justify-between">
             <Link href="/">
