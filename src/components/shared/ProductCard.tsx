@@ -9,7 +9,7 @@ const ProductCard = (
     {
       _id: string;
       title: string;
-      price: string;
+      price: number;
       description: string,
       image: IImage;
       category: {

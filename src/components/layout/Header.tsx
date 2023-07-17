@@ -2,13 +2,12 @@
 import React from 'react';
 import Wrapper from '../shared/Wrapper';
 import Image from 'next/image';
-import Logo from '/public/Logo.png';
 import Link from 'next/link';
 import { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import Drawer from '@/components/shared/Drawer';
 import Navbar from '../shared/NavbarLinks';
-import Shoppingcart from '../shared/Shoppingcart';
+import Shoppingcart from '@/components/shared/Shoppingcart';
 
 const Header = () => {
   const navbar = false;
@@ -24,7 +23,7 @@ const Header = () => {
           <div className="object-scale-down md:justify-between">
             <Link href="/">
               <div>
-                <Image src={Logo} alt="Dine Market" />
+                <Image src='/logo.png' alt='Dine Market' width={140} height={140} />
               </div>
             </Link>
           </div>
@@ -52,7 +51,7 @@ const Header = () => {
           {/* Cart */}
           <div className='hidden md:block'>
             <Link href={"/cart"}>
-            <Shoppingcart />
+              <Shoppingcart />
             </Link>
           </div>
         </div>

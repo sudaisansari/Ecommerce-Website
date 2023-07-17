@@ -10,7 +10,8 @@ const AddToCart = () => {
   const addItem = () => {
     dispatch(cartActions.addToCart({ product: {}, quantity: 1 }));
     toast.success("Product added");
-  };
-  return <Button onClick={addItem}>Add to Cart</Button>;
+  }
+  return <Button className="rounded-none text-center text-lg text-white w-36 hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121]"
+    onClick={addItem}>Add to Cart</Button>;
 };
 export default AddToCart;

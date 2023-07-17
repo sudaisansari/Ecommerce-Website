@@ -61,8 +61,8 @@ const page = async ({ params }: { params: { id: string } }) => {
                             {/* Add to Cart */}
                             <div className="flex items-center mt-5 gap-x-4">
                                 <AddToCart />
-                                <h2 className="text-2xl font-bold">
-                                    ${product.price}
+                                <h2 className="text-3xl font-bold">
+                                    ${product.price.toFixed(2)}
                                 </h2>
                             </div>
                         </div>

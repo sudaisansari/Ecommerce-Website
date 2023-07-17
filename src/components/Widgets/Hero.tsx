@@ -45,8 +45,8 @@ const Hero = () => {
                 <Image
                   width={700}
                   height={1500}
-                  className='' //these classes are for image settlement
-                  src={hero} alt='Hero Image' />
+                  src='/heroi.png' 
+                  alt='Hero Image' />
               </div>
             </div>
           </div>
