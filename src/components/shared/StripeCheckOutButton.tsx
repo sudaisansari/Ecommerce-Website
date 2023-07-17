@@ -1,9 +1,9 @@
 "use client";
 import getStipePromise from "@/lib/stripe";
 
-const products = [
+export const stripeproducts = [
     {
-        product: 1,
+        id: 1,
         name: "Stripe Product",
         price: 400,
         quantity: 3,
@@ -29,7 +29,7 @@ const StripeCheckOutButton = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             cache: "no-cache",
-            body: JSON.stringify(products),
+            body: JSON.stringify(stripeproducts),
         });
 
         const data = await response.json();
@@ -41,10 +41,10 @@ const StripeCheckOutButton = () => {
     return (
         <div className="py-5">
             <button
-                className="bg-green-500 py-3 px-3 rounded-md"
+                className="hover:shadow-md hover:ring-1 ring-slate-400 bg-[#212121] py-2 px-2 text-lg font-medium gap-x-2 rounded-none text-center text-white"
                 onClick={handleCheckout}
             >
-                Check out
+                Process to Checkout
             </button>
         </div>
     );

@@ -3,7 +3,7 @@
 import { cartActions } from "@/store/slice/cartSlice";
 import { Button } from "@/components/shared/Button";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux'
 
 const AddToCart = () => {
   const dispatch = useDispatch();

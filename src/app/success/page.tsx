@@ -3,11 +3,15 @@ import Wrapper from '@/components/shared/Wrapper'
 import React from 'react'
 import { BsFillBagCheckFill } from "react-icons/bs"
 import Link from 'next/link'
+import Congrats from '@/components/shared/Congrats'
 
 const page = () => {
   return (
     <Wrapper>
-      <div className=' bg-[#F1F1F1] mt-10 rounded-md '>
+      <div className='relative bg-[#F1F1F1] mt-10 rounded-md '>
+        <div className='absolute top-0'>
+          <Congrats />
+        </div>
         <div className='mb-20 flex flex-col items-center'>
           {/* Bag */}
           <div className='mt-20'>
