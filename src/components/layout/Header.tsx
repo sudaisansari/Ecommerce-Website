@@ -8,7 +8,6 @@ import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import Drawer from '@/components/shared/Drawer';
 import Navbar from '../shared/NavbarLinks';
 import Shoppingcart from '@/components/shared/Shoppingcart';
-import Logo from "/public/logo.png"
 
 const Header = () => {
   const navbar = false;
@@ -23,7 +22,7 @@ const Header = () => {
           <div className="object-scale-down md:justify-between">
             <Link href="/">
               <div>
-                <Image src={Logo} alt='Dine Market' width={140} height={140} />
+                <Image src='/logo.png' alt='Dine Market' width={140} height={140} />
               </div>
             </Link>
           </div>

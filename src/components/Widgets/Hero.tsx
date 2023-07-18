@@ -4,8 +4,6 @@ import Wrapper from '../shared/Wrapper'
 import Image from 'next/image'
 import { CgShoppingCart } from 'react-icons/cg'
 import Link from 'next/link'
-import hero from '/public/header.png'
-
 
 const Hero = () => {
   return (

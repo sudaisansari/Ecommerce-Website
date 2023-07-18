@@ -4,7 +4,6 @@ import Wrapper from '../shared/Wrapper'
 import { CgFacebook } from "react-icons/cg"
 import { TiSocialLinkedin } from "react-icons/ti"
 import { AiOutlineTwitter } from "react-icons/ai"
-import Logo from "/public/logo.png"
 
 const Items = [
     {
@@ -38,7 +37,7 @@ const Footer = () => {
                         <div className='md:w-1/4'>
                             {/* logo */}
                             <div>
-                                <Image src={Logo} alt='Dine Market' width={140} height={140} />
+                                <Image src='/logo.png' alt='Dine Market' width={140} height={140} />
                             </div>
                             {/* paragraph */}
                             <p className='mt-8 mb-8 text-lg'>
