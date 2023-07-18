@@ -1,7 +1,7 @@
 import Hero from "@/components/Widgets/Hero"
 import Jwellery from "@/components/Widgets/Jwellery";
 import Newsletter from "@/components/Widgets/Newsletter";
-import Product from "@/components/Widgets/Product";
+import ProductSection from "@/components/Widgets/ProductSection";
 import Promotion from "@/components/Widgets/Promotion"
 
 export default async function Home() {
@@ -12,7 +12,7 @@ export default async function Home() {
       {/* @ts-ignore */}
       <Promotion />
       {/* @ts-ignore */}
-      <Product />
+      <ProductSection />
       {/* @ts-ignore */}
       <Jwellery />
       <Newsletter />

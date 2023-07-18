@@ -66,7 +66,6 @@ const cartSlice = createSlice({
     },
   },
 });
-console.log(cartSlice);
 // Action creators are generated for each case reducer function
 export const cartActions = cartSlice.actions;
 

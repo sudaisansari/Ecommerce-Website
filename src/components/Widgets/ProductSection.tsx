@@ -1,8 +1,8 @@
 import React from 'react'
-import Wrapper from '../shared/Wrapper'
-import Slider from '../shared/Slider'
+import Wrapper from '@/components/shared/Wrapper'
+import Slider from '@/components/shared/Slider'
 
-const Product = () => {
+const ProductSection = () => {
 
     return (
         <section id='product'>
@@ -22,4 +22,4 @@ const Product = () => {
         </section>
     )
 }
-export default Product
+export default ProductSection
