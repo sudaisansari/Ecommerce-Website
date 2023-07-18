@@ -28,7 +28,7 @@ const cartSlice = createSlice({
       state.totalAmount =
         state.totalAmount +
         action.payload.quantity * action.payload.product.price;
-
+        
       if (!existingItem) {
         const totalPrice = newItem.price * action.payload.quantity;
         state.items.push({
