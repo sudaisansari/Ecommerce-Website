@@ -34,7 +34,7 @@ const Jwellery = async () => {
   return (
     <section id='jwellery'>
       <Wrapper>
-        <div className='mt-36'>
+        <div className=''>
           {/* heading */}
           <div className='flex text-center justify-center xl:justify-end pb-5'>
             <h2 className="max-w-lg text-[50px] right-20 font-bold tracking-normal text-left leading-tight">
@@ -44,7 +44,7 @@ const Jwellery = async () => {
           <div className='flex flex-col xl:flex-row justify-center flex-wrap'>
             {/* Quarter Boxes */}
             <div className='relative xl:flex-1 mb-2'>
-              <h2 className="absolute xl:block hidden text-8xl max-w-[250px] font-bold text-gray-200/75 -z-10">
+              <h2 className="absolute justify-center left-32 xl:block max-w-[40px] hidden text-8xl font-bold text-gray-200/75 -z-10 top-0">
                 Different from others
               </h2>
               <div className='flex flex-col justify-center flex-1 mx-10 items-center'>
@@ -69,6 +69,7 @@ const Jwellery = async () => {
                 </div>
               </div>
             </div>
+            
             {/* Image and description */}
             <div className='flex flex-col md:flex-row space-y-4 justify-center items-center'>
               {/* image */}

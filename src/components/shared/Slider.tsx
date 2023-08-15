@@ -11,12 +11,12 @@ import Link from 'next/link';
 
 const Slider = () => {
     const [data, setData] = useState<TProduct[]>([]);
+    const [slidesPerView, setSlidesPerView] = useState(3); // Default number of slides
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const result = await getData();
-                console.log(result)
                 setData(result);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -24,6 +24,22 @@ const Slider = () => {
         };
 
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setSlidesPerView(1); // Show one slide on mobile screens
+            } else {
+                setSlidesPerView(3); // Show three slides on larger screens
+            }
+        };
+
+        handleResize(); // Call once to set the initial value
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const getData = async () => {
@@ -41,7 +57,7 @@ const Slider = () => {
                 <Swiper
                     className='hover:transi-x-3'
                     spaceBetween={1}
-                    slidesPerView={3}
+                    slidesPerView={slidesPerView}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
@@ -49,7 +65,7 @@ const Slider = () => {
                         <SwiperSlide key={product._id}>
                             <button>
                                 <div className="mt-8 mb-8 px-5 text-left image-container hover:scale-110 transition-transform duration-300">
-                                <Link href={`/products/${product._id}`}>
+                                    <Link href={`/products/${product._id}`}>
                                         <Image
                                             width={380}
                                             height={600}

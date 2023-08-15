@@ -24,14 +24,14 @@ export const stripeproducts = [
 
 const StripeCheckOutButton = () => {
     const handleCheckout = async () => {
-        const stripe = await getStipePromise();
+        const stripe = await getStipePromise();//
         const response = await fetch("/api/stripe-session/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            cache: "no-cache",
+            cache: "no-cache",  
             body: JSON.stringify(stripeproducts),
         });
-
+        console.log("s",response)
         const data = await response.json();
         if (data.session) {
             stripe?.redirectToCheckout({ sessionId: data.session.id });

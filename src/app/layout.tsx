@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import Providers from '@/components/shared/Provider'
+import { ClerkProvider } from '@clerk/nextjs/app-beta'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,12 +22,14 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <Providers>
-          {/* Header */}
-          <Header />
-          {children}
-          <Footer />
-        </Providers>
+        <ClerkProvider>
+          <Providers>
+            {/* Header */}
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </ClerkProvider>
       </body>
     </html>
   )

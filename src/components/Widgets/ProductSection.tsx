@@ -5,7 +5,7 @@ import Slider from '@/components/shared/Slider'
 const ProductSection = () => {
 
     return (
-        <section id='product'>
+        <section id='productsection'>
             <Wrapper>
                 <div className='mt-36'>
                     {/* Heading */}
@@ -13,7 +13,7 @@ const ProductSection = () => {
                         <h3 className='text-[#7E2CFF] font-bold text-center'>PRODUCTS</h3>
                         <h2 className='text-[32px] tracking-wide font-bold text-center'>Check What We Have</h2>
                     </div>
-                    {/* First */}
+                    {/* Slider */}
                     <div>
                        <Slider />
                     </div>

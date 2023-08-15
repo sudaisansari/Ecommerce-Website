@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image';
 import { urlForImage } from '../../../../sanity/lib/image';
 import Quantity from '@/components/shared/Quantity';
-import AddToCart from '@/components/shared/AddToCart';
+import AddProductButton from '@/components/shared/AddToCart';
 import Wrapper from '@/components/shared/Wrapper';
 
 const sizes = ["xs", "sm", "md", "lg", "xl"];
@@ -20,7 +20,7 @@ const page = async ({ params }: { params: { id: string } }) => {
         <Wrapper>
             <div className="flex flex-wrap items-center justify-center py-10 mt-16 bg-slate-50">
                 {result.map((product) => (
-                    <div key={product._id} className="flex justify-between gap-6">
+                    <div key={product._id} className="flex md:flex-row flex-col justify-between gap-6">
                         {/* Left Image */}
                         <div>
                             <Image
@@ -53,21 +53,49 @@ const page = async ({ params }: { params: { id: string } }) => {
                                     })}
                                 </div>
                             </div>
-                            {/* Quantity */}
-                            <div className="flex items-center mt-8 gap-x-6">
-                                <h3 className="text-xl font-semibold">Quantity:</h3>
-                                <Quantity />
-                            </div>
                             {/* Add to Cart */}
                             <div className="flex items-center mt-5 gap-x-4">
-                                <AddToCart />
-                                <h2 className="text-3xl font-bold">
-                                    ${product.price.toFixed(2)}
-                                </h2>
+                                <AddProductButton data={result} />
                             </div>
                         </div>
                     </div>
                 ))}
+            </div>
+            {/* 2nd Div */}
+            <div className="bg-white flex flex-col gap-8 mt-28 sm:px-14 py-28 gap-y-10">
+                <div className="flex items-center border-b-2 border-[#c4c4c4] relative">
+                    <h3 className="absolute text-2xl font-semibold">
+                        Product Information
+                    </h3>
+                    <h1 className="text-[#f2f3f7] xl:text-[7rem] sm:text-8xl min-[410px]:text-7xl text-5xl leading-none font-black max-[310px]:mb-4">
+                        Overview
+                    </h1>
+                </div>
+                <div className="flex sm:flex-row flex-col max-sm:space-y-2 justify-between">
+                    <h3 className="text-[#666] flex-1 font-semibold">
+                        PRODUCT DETAILS
+                    </h3>
+                    <p className="flex-[2_1] font-light leading-7 text-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div className="flex sm:flex-row flex-col max-sm:space-y-2 justify-between">
+                    <h3 className="text-[#666] flex-1 font-semibold">
+                        PRODUCT DETAILS
+                    </h3>
+                    <ul className="flex-[2_1] flex flex-col list-disc list-inside gap-1 text-lg">
+                        <li className="font-semibold">Hand wash using cold water.</li>
+                        <li className="font-semibold">Do not using bleach.</li>
+                        <li className="font-semibold">Hang it to dry.</li>
+                        <li className="font-semibold">Iron on low temperature.</li>
+                    </ul>
+                </div>
             </div>
         </Wrapper>
     );

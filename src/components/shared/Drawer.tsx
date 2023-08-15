@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Navbar from './NavbarLinks';
 import Shoppingcart from './Shoppingcart';
-import Logo from '/public/logo.png';
+import { UserButton } from '@clerk/nextjs';
 
 export default function CartDrawer({
     open,
@@ -43,7 +43,9 @@ export default function CartDrawer({
                                         <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                                             <div className="flex items-start justify-between">
                                                 <Dialog.Title className="text-lg font-medium text-gray-900">
-                                                    s
+                                                    <div>
+                                                        <UserButton afterSignOutUrl='/' />
+                                                    </div>
                                                 </Dialog.Title>
                                                 <div className="ml-3 flex h-7 items-center">
                                                     <button
@@ -57,13 +59,14 @@ export default function CartDrawer({
                                             </div>
                                             <div>
                                                 {/* Navbar Links */}
-                                                <div className='items-center mt-8 gap-y-20'>
+                                                <div onClick={() => setOpen(false)} className='items-center mt-8 gap-y-20'>
                                                     <Navbar />
                                                 </div>
                                                 {/* Shopping Cart */}
-                                                <div className='mt-4'>
+                                                <div onClick={() => setOpen(false)} className='mt-4'>
                                                     <Shoppingcart />
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>

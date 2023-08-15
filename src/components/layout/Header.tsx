@@ -1,13 +1,15 @@
 "use client"
 import React from 'react';
-import Wrapper from '../shared/Wrapper';
+import Wrapper from '@/components/shared/Wrapper';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import Drawer from '@/components/shared/Drawer';
-import Navbar from '../shared/NavbarLinks';
+import Navbar from '@/components/shared/NavbarLinks';
 import Shoppingcart from '@/components/shared/Shoppingcart';
+import { UserButton } from '@clerk/nextjs';
+// import { UserButton } from '@clerk/nextjs';
 
 const Header = () => {
   const navbar = false;
@@ -52,6 +54,9 @@ const Header = () => {
             <Link href={"/cart"}>
               <Shoppingcart />
             </Link>
+          </div>
+          <div className='hidden md:block'>
+            <UserButton afterSignOutUrl='/' />
           </div>
         </div>
       </Wrapper>

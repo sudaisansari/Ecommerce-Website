@@ -24,7 +24,7 @@ const Promotion = async () => {
   const data1 = await getData1();
   const data2 = await getData2();
   const data3 = await getData3();
-  
+
   return (
     <section id='promotions'>
       <Wrapper>
@@ -37,7 +37,7 @@ const Promotion = async () => {
               {/* Upper Side */}
               <div className=' bg-[#D6D6D8]'>
                 {
-                  data1.map((item,i) => (
+                  data1.map((item, i) => (
                     <div key={i} className='flex flex-col md:flex-row mx-5'>
                       <div>
                         <h2 className='text-3xl mt-4 font-bold lg:max-w-[150px]'>{item.title}</h2>
@@ -69,7 +69,7 @@ const Promotion = async () => {
             <div className='flex flex-col gap-y-2 md:flex-row mb-4'>
               {/* Left Image */}
               <div className='mx-5 bg-[#EFE1C7]'>
-                {data2.map((item,i) => (
+                {data2.map((item, i) => (
                   <div key={i}>
                     {/* Heading */}
                     <div className='mt-6 mx-5'>
@@ -92,7 +92,7 @@ const Promotion = async () => {
               </div>
               {/* Right Image */}
               <div className='bg-[#D7D7D9] '>
-                {data3.map((item,i) => (
+                {data3.map((item, i) => (
                   <div key={i}>
                     <div className='mt-6 mx-5'>
                       <h4 className='font-medium text-xl text-black'>{item.title}</h4>

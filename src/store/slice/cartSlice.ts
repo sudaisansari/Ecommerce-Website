@@ -9,7 +9,7 @@ export interface CartState {
 
 const initialState: CartState = {
   items: [],
-  totalQuantity: 0, 
+  totalQuantity: 0,
   totalAmount: 0,
 };
 
@@ -36,6 +36,7 @@ const cartSlice = createSlice({
           quantity: action.payload.quantity,
           totalPrice,
         });
+        console.log(state.items)
       } else {
         const totalPrice =
           existingItem.totalPrice +
