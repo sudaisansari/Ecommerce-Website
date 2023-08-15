@@ -120,7 +120,8 @@ const ProductCart = () => {
     useEffect(() => {
         setCartData(data);
         refresh();
-    }, [data]);
+    }, [data, refresh]);
+
 
     const handleDeleteCart = async (id: number) => {
         try {
@@ -181,14 +182,14 @@ const ProductCart = () => {
 
             setIsCartDataModified(false);
             setIsUpdatingCart(false); // Set the state to false after updating cart
-            toast.success(`Orders updated successfully!`);
             mutate("/api/cart");
+            toast.success(`Orders updated successfully!`);
 
             // Handle the successful update here
         } catch (error) {
             console.error("Error updating cart:", error);
             setIsUpdatingCart(false); // Set the state to false after updating cart
-        } 
+        }
     };
 
     const clearCart = async () => {
@@ -206,7 +207,7 @@ const ProductCart = () => {
     // 
 
     const handleCheckout = async () => {
-        const stripe = await getStipePromise();//
+        const stripe = await getStipePromise();
         const response = await fetch("/api/stripe-session/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

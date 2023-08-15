@@ -20,7 +20,7 @@ const Shoppingcart = () => {
       setCartQuantity(totalQuantity);
       refresh();
     }
-  }, [data]);
+  }, [data, refresh]);
 
   return (
     <div>
