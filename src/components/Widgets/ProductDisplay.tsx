@@ -1,6 +1,6 @@
 import React from 'react'
 import Wrapper from '@/components/shared/Wrapper'
-import ProductSlider from '@/components/shared/Slider'
+import ProductSlider from '@/components/shared/ProductSlider'
 
 const ProductSection = () => {
 
