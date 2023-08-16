@@ -9,9 +9,17 @@ import Image from 'next/image';
 import Wrapper from './Wrapper';
 import Link from 'next/link';
 
-const Slider = () => {
+const getData = async () => {
+        const products = await AllProducts();
+        return products.filter(
+            (product) =>
+                product._id !== '39dc22b8-f400-4a57-bb5b-af65ebbab4ed' &&
+                product._id !== '8d4a5634-b4f3-4b15-84db-ea5c172b6b85'
+        );
+    };
+
+const ProductSlider = () => {
     const [data, setData] = useState<TProduct[]>([]);
-    const [slidesPerView, setSlidesPerView] = useState(3); // Default number of slides
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,42 +32,26 @@ const Slider = () => {
         };
 
         fetchData();
-    }, []);
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 768) {
-                setSlidesPerView(1); // Show one slide on mobile screens
-            } else {
-                setSlidesPerView(3); // Show three slides on larger screens
-            }
-        };
-
-        handleResize(); // Call once to set the initial value
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const getData = async () => {
-        const products = await AllProducts();
-        return products.filter(
-            (product) =>
-                product._id !== '39dc22b8-f400-4a57-bb5b-af65ebbab4ed' &&
-                product._id !== '8d4a5634-b4f3-4b15-84db-ea5c172b6b85'
-        );
-    };
+    }, []);    
 
     return (
         <div>
             <Wrapper>
                 <Swiper
-                    className='hover:transi-x-3'
-                    spaceBetween={1}
-                    slidesPerView={slidesPerView}
-                    onSlideChange={() => console.log('slide change')}
+                    onSlideChange={() => console.log("slide change")}
                     onSwiper={(swiper) => console.log(swiper)}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    }}
+                    spaceBetween={10}
                 >
                     {data.map((product) => (
                         <SwiperSlide key={product._id}>
@@ -84,4 +76,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default ProductSlider;

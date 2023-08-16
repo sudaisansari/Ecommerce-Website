@@ -37,7 +37,7 @@ const Footer = () => {
                         <div className='md:w-1/4'>
                             {/* logo */}
                             <div>
-                                <Image src='/logo.png' alt='Dine Market' width={140} height={140} />
+                                <Image src='/dineLogo.png' alt='Dine Market' width={140} height={140} />
                             </div>
                             {/* paragraph */}
                             <p className='mt-8 mb-8 text-lg'>

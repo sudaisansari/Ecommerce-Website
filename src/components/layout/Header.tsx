@@ -24,7 +24,7 @@ const Header = () => {
           <div className="object-scale-down md:justify-between">
             <Link href="/">
               <div>
-                <Image src='/logo.png' alt='Dine Market' width={140} height={140} />
+                <Image src='/dineLogo.png' alt='Dine Market' width={140} height={140} />
               </div>
             </Link>
           </div>
