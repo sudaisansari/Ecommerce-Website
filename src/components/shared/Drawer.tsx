@@ -4,6 +4,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import Navbar from './NavbarLinks';
 import Shoppingcart from './Shoppingcart';
 import { UserButton } from '@clerk/nextjs';
+import Link from "next/link" 
 
 export default function CartDrawer({
     open,
@@ -59,14 +60,15 @@ export default function CartDrawer({
                                             </div>
                                             <div>
                                                 {/* Navbar Links */}
-                                                <div onClick={() => setOpen(false)} className='items-center mt-8 gap-y-20'>
+                                                <div onClick={() => setOpen(false)} className='items-center mt-8 gap-y-28'>
                                                     <Navbar />
                                                 </div>
                                                 {/* Shopping Cart */}
                                                 <div onClick={() => setOpen(false)} className='mt-4'>
-                                                    <Shoppingcart />
+                                                    <Link href={"/cart"}>
+                                                        <Shoppingcart />
+                                                    </Link>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>

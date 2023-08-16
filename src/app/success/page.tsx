@@ -18,10 +18,10 @@ const page = () => {
             <BsFillBagCheckFill className='h-20 w-20 text-[#008000]' />
           </div>
           {/* heading and para */}
-          <h1 className='font-bold text-[44px] mt-2'>Thank you for your order!</h1>
-          <p className='text-[16px] font-semibold'>Check your email inbox for the receipt</p>
+          <h1 className='font-bold text-center text-[44px] mt-2'>Thank you for your order!</h1>
+          <p className='text-[16px] text-center font-semibold'>Check your email inbox for the receipt</p>
           {/* Para 2 */}
-          <p className='text-[16px] font-semibold mt-8 mb-8'>If you have any questions, please email <span className='text-red-500'>dinemarket@example.com</span></p>
+          <p className='text-[16px] text-center font-semibold mt-8 mb-8'>If you have any questions, please email <span className='text-red-500'>dinemarket@example.com</span></p>
           {/* Button */}
           <div className='mb-20'>
             <Link href={"/"}>

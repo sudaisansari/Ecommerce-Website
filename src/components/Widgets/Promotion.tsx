@@ -61,14 +61,14 @@ const Promotion = async () => {
                   <p className='text-center mt-4 font-medium text-white'>USE PROMO CODE</p>
                 </div>
                 <div>
-                  <Button className='hover:shadow-md hover:ring-1 ring-slate-400 bg-[#474747] mt-2 mb-10 text-white tracking-[0.3rem]'>DINEWEEKENDSALE</Button>
+                  <Button className='hover:shadow-md ring-1 ring-slate-400 bg-[#474747] mt-2 mb-10 text-white tracking-[0.3rem]'>DINEWEEKENDSALE</Button>
                 </div>
               </div>
             </div>
             {/* Right Side */}
             <div className='flex flex-col gap-y-2 md:flex-row mb-4'>
               {/* Left Image */}
-              <div className='mx-5 bg-[#EFE1C7]'>
+              <div className='mx-5 bg-[#EFE1C7] p-9 md:p-0'>
                 {data2.map((item, i) => (
                   <div key={i}>
                     {/* Heading */}
@@ -91,10 +91,10 @@ const Promotion = async () => {
 
               </div>
               {/* Right Image */}
-              <div className='bg-[#D7D7D9] '>
+              <div className='bg-[#D7D7D9] mx-5 md:mx-0'>
                 {data3.map((item, i) => (
                   <div key={i}>
-                    <div className='mt-6 mx-5'>
+                    <div className='mt-6 mx-5'> 
                       <h4 className='font-medium text-xl text-black'>{item.title}</h4>
                       <div className='flex mt-1 mb-16'>
                         <p className='line-through text-xl'>${item.price}</p>
