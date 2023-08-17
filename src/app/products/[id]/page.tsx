@@ -2,7 +2,6 @@ import { AllProducts } from '@/utils/mock'
 import React from 'react'
 import Image from 'next/image';
 import { urlForImage } from '../../../../sanity/lib/image';
-import Quantity from '@/components/shared/Quantity';
 import AddProductButton from '@/components/shared/AddToCart';
 import Wrapper from '@/components/shared/Wrapper';
 
