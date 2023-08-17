@@ -50,21 +50,23 @@ const ProductSection = async () => {
                             spaceBetween={10}
                         >
                             {products.map((p, index) => (
-                                <SwiperSlide key={index}>
-                                    <button>
+                                <div key={index}>
+                                    <SwiperSlide>
                                         <div className="mt-8 mb-8 px-5 text-left image-container hover:scale-110 transition-transform duration-300">
-                                            <Link href={`/products/${p._id}`}>
-                                                <Image
-                                                    width={380}
-                                                    height={600}
-                                                    src={urlForImage(p.image).url()}
-                                                    alt={p.title} />
-                                                <p className='text-textPrimary text-xl font-bold mt-2'>{p.title}</p>
-                                                <p className='text-textPrimary text-xl font-bold'>${p.price}</p>
-                                            </Link>
+                                            <button>
+                                                <Link href={`/products/${p._id}`}>
+                                                    <Image
+                                                        width={380}
+                                                        height={600}
+                                                        src={urlForImage(p.image).url()}
+                                                        alt={p.title} />
+                                                    <p className='text-textPrimary text-xl font-bold mt-2'>{p.title}</p>
+                                                    <p className='text-textPrimary text-xl font-bold'>${p.price}</p>
+                                                </Link>
+                                            </button>
                                         </div>
-                                    </button>
-                                </SwiperSlide>
+                                    </SwiperSlide>
+                                </div>
                             ))}
                         </Swiper>
                     </div>
