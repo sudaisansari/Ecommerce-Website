@@ -1,42 +1,20 @@
 "use client"
-import React, { useState, useEffect } from 'react';
 import Wrapper from '@/components/shared/Wrapper'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
 import Image from "next/image";
 import Link from "next/link";
 import { urlForImage } from "../../../sanity/lib/image";
 import { AllProducts } from "@/utils/mock";
-import { TProduct } from '@/utils/types';
 
 const getData = async () => {
-    const products = await AllProducts();
-    return products.filter(
-        (product) =>
-            product._id !== '39dc22b8-f400-4a57-bb5b-af65ebbab4ed' &&
-            product._id !== '8d4a5634-b4f3-4b15-84db-ea5c172b6b85'
-    );
-};
+    const data = await AllProducts();
+    return data.filter((products) => products._id !== "39dc22b8-f400-4a57-bb5b-af65ebbab4ed" && products._id !== "8d4a5634-b4f3-4b15-84db-ea5c172b6b85")
+}
 
 const ProductSection = async () => {
-    //const [products, setProducts] = useState<TProduct[]>([]);
-
     const result = await getData();
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const allProducts = await AllProducts();
-    //         const filteredProducts = allProducts.filter(
-    //             (product) =>
-    //                 product._id !== '39dc22b8-f400-4a57-bb5b-af65ebbab4ed' &&
-    //                 product._id !== '8d4a5634-b4f3-4b15-84db-ea5c172b6b85'
-    //         );
-    //         setProducts(filteredProducts);
-    //     };
-
-    //     fetchData();
-    // }, []);
 
     return (
         <section id='productsection'>
@@ -75,7 +53,8 @@ const ProductSection = async () => {
                                                     width={380}
                                                     height={600}
                                                     src={urlForImage(p.image).url()}
-                                                    alt={p.title} />
+                                                    alt={p.title}
+                                                />
                                                 <p className='text-textPrimary text-xl font-bold mt-2'>{p.title}</p>
                                                 <p className='text-textPrimary text-xl font-bold'>${p.price}</p>
                                             </Link>
