@@ -15,7 +15,7 @@ const getData = async () => {
 
 const ProductSection = async () => {
     const result = await getData();
-
+    //console.log(result.map((item) => item))
     return (
         <section id='productsection'>
             <Wrapper>
@@ -45,19 +45,19 @@ const ProductSection = async () => {
                             spaceBetween={10}
                         >
                             {
-                                result.map((p) => (
-                                    <SwiperSlide key={p._id}>
+                                result.map((product, i) => (
+                                    <SwiperSlide key={i}>
                                         <div className="mt-8 cursor-pointer mb-8 px-5 text-left image-container hover:scale-110 transition-transform duration-300">
-                                            <Link href={`/products/${p._id}`}>
+                                            <Link href={`/products/${product._id}`}>
                                                 <Image
                                                     width={380}
                                                     height={600}
-                                                    src={urlForImage(p.image).url()}
-                                                    alt={p.title}
+                                                    src={urlForImage(product.image).url()}
+                                                    alt={product.title}
                                                 />
-                                                <p className='text-textPrimary text-xl font-bold mt-2'>{p.title}</p>
-                                                <p className='text-textPrimary text-xl font-bold'>${p.price}</p>
                                             </Link>
+                                            <p className='text-textPrimary text-xl font-bold mt-2'>{product.title}</p>
+                                            <p className='text-textPrimary text-xl font-bold'>${product.price}</p>
                                         </div>
                                     </SwiperSlide>
                                 ))
