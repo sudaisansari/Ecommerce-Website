@@ -13,7 +13,7 @@ export default async function Home() {
       {/* @ts-ignore */}
       <Promotion />
       {/* @ts-ignore */}
-      {/* <ProductSection /> */}
+      <ProductSection />
       {/* @ts-ignore */}
       <Jwellery />
       <Newsletter />
